@@ -2,7 +2,7 @@
 _Created by [Jackson Zavarella](https://www.linkedin.com/in/jackson-zavarella-040183133/)_
 
 This package provides the basic tools to be able to run any algorithm forward or backwards one step at a time.
-You must write your algorithm according to the [Algorithm Interface](#algorithm-interface).
+You must write your algorithm according to the [Algorithm Interface](#algorithm-interface) and then using the [Algorithm Stepper](#algorithm-stepper-1) to step through the algorithm.
 
 ### [Algorithm Interface](https://github.com/jzavarella/AlgorithmStepper/blob/master/src/main/java/algorithm/Algorithm.java)
 This is the interface for an algorithm which can be executed one step/cycle at a time.
@@ -17,7 +17,31 @@ A single step of the algorithm being implemented follows the following lifecycle
 
 If there is an exception in any of the above stages, the corresponding exception method is executed and the user can choose whether to continue through the lifecycle by returning true or false from the exception method.
 
-An example implementation for the fibonacci algorithm can be found [here](https://github.com/jzavarella/AlgorithmStepper/blob/master/src/main/java/algorithm/implementations/Fibonacci.java).
+An example implementation for and algorithm to calculate numbers of the fibonacci sequence can be found [here](https://github.com/jzavarella/AlgorithmStepper/blob/master/src/main/java/algorithm/implementations/Fibonacci.java).
 
 ### [Algorithm Stepper](https://github.com/jzavarella/AlgorithmStepper/blob/master/src/main/java/algorithm/stepper/AlgorithmStepper.java)
-This class handles the life cycle of an algorithm. It has two main functions, stepping forward and backwards in the algorithm. While stepping forward or backward, the appropriate the algorithm's pre and post steps are called and in the event of an exception, the appropriate exception method is called
+This class handles the life cycle of an algorithm. It has two main functions, stepping forward and backwards in the algorithm. While stepping forward or backward, the appropriate the algorithm's pre and post steps are called and in the event of an exception, the appropriate exception method is called.
+
+#### AlgorithmStepper Lifecycle
+
+This flowchart shows how the algorithm stepper executes the algorithm one step at a time.
+![lifecycle](lifecycle.png)
+
+#### Usage
+```java
+class TestClass {
+    public static void main(String[] args) {
+        Algorithm fibonacci = new Fibonacci(); // Instantiate an implementation of the Algorithm Interface
+        AlgorithmStepper stepper = new AlgorithmStepper(fibonacci); // Instantiate an AlgorithmStepper passing an Algorithm to it
+        
+        stepper.stepForward(); // Will output '1'
+        stepper.stepForward(); // Will also output '1' because the first two elements of the fibonacci sequence are 1
+        stepper.stepForward(); // Will output '2'
+        stepper.stepForward(); // Will output '3'
+        
+        stepper.stepBackward(); // Will step back in the algorithm and output '2' because two is the previous element
+        
+        System.out.println(stepper.toString()); // Will output '[1, 1, 2]' toString calls the toString of the Algorithm and in the case of the fibonacci Algorithm implementation it returns the sequence of numbers generated so far
+    }
+}
+```
