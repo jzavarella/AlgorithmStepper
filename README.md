@@ -2,7 +2,7 @@
 _Created by [Jackson Zavarella](https://www.linkedin.com/in/jackson-zavarella-040183133/)_
 
 This package provides the basic tools to be able to run any algorithm forward or backwards one step at a time.
-You must write your algorithm according to the [Algorithm Interface](#algorithm-interface) and then using the [Algorithm Stepper](#algorithm-stepper-1) to step through the algorithm.
+You must write your algorithm according to the [Algorithm Interface](#algorithm-interface) and then use the [Algorithm Stepper](#algorithm-stepper-1) to step through the algorithm.
 
 ### [Algorithm Interface](https://github.com/jzavarella/AlgorithmStepper/blob/master/src/main/java/algorithm/Algorithm.java)
 This is the interface for an algorithm which can be executed one step/cycle at a time.
@@ -20,7 +20,7 @@ If there is an exception in any of the above stages, the corresponding exception
 An example implementation for and algorithm to calculate numbers of the fibonacci sequence can be found [here](https://github.com/jzavarella/AlgorithmStepper/blob/master/src/main/java/algorithm/implementations/Fibonacci.java).
 
 ### [Algorithm Stepper](https://github.com/jzavarella/AlgorithmStepper/blob/master/src/main/java/algorithm/stepper/AlgorithmStepper.java)
-This class handles the life cycle of an algorithm. It has two main functions, stepping forward and backwards in the algorithm. While stepping forward or backward, the appropriate the algorithm's pre and post steps are called and in the event of an exception, the appropriate exception method is called.
+This class handles the life cycle of an algorithm. It has two main functions, stepping forward and backwards in the algorithm. While stepping forward or backward, the appropriate algorithm pre and post steps are called and in the event of an exception, the appropriate exception method is called.
 
 #### AlgorithmStepper Lifecycle
 
