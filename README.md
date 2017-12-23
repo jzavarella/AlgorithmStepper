@@ -2,6 +2,7 @@
 _Created by [Jackson Zavarella](https://www.linkedin.com/in/jackson-zavarella-040183133/)_
 
 This package provides the basic tools to be able to run any algorithm forward or backwards one step at a time.
+You must write your algorithm according to the [Algorithm Interface](#algorithm-interface).
 
 ### [Algorithm Interface](https://github.com/jzavarella/AlgorithmStepper/blob/master/src/main/java/algorithm/Algorithm.java)
 This is the interface for an algorithm which can be executed one step/cycle at a time.
