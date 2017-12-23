@@ -6,7 +6,7 @@ import algorithm.Algorithm;
  * Created by Jackson Zavarella
  *
  * This class handles the life cycle of an algorithm. It has two main functions, stepping forward and backwards in the algorithm.
- * While stepping forward or backward, the appropriate the algorithm's pre and post steps are called and in the event of an exception, the appropriate exception method is called
+ * While stepping forward or backward, the appropriate the algorithm's pre and post steps are called and in the event of an exception, the appropriate exception method is called.
  */
 public class AlgorithmStepper {
 
