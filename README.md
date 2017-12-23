@@ -46,7 +46,7 @@ class TestClass {
 }
 ```
 
-### Algorithm Stepper UI
+### [Algorithm Stepper UI](https://github.com/jzavarella/AlgorithmStepper/blob/master/src/main/java/algorithm/stepper/AlgorithmStepperUI.java)
 This package also includes a graphical UI wrapper for the [Algorithm Stepper](#algorithm-stepper-1)
 The AlgorithmStepperUI extends JFrame.
 
