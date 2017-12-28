@@ -1,4 +1,4 @@
-package algorithm.implementations;
+package algorithm.implementations.fibonacci;
 
 import algorithm.Algorithm;
 
@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class Fibonacci implements Algorithm {
 
-    private ArrayList<Long> fibonacciNumbers; // Stores all of the generate fibonacci numbers in sequence
+    protected ArrayList<Long> fibonacciNumbers; // Stores all of the generate fibonacci numbers in sequence
     private long currentFibonacciNumber; // Stores the current fibonacci number
     private boolean isOne; // Flag that sores if the current fibonacci number is a 1
 
@@ -104,7 +104,7 @@ public class Fibonacci implements Algorithm {
     @Override
     public boolean prePreviousStepException(Exception prePreviousException) {
         System.out.println("There are no previous elements in the fibonacci sequence");
-        return false;
+        return true;
     }
 
     /**
@@ -125,7 +125,7 @@ public class Fibonacci implements Algorithm {
     @Override
     public boolean previousStepException(Exception previousStepException) {
         System.out.println("There are no previous elements in the fibonacci sequence");
-        return false;
+        return true;
     }
 
     /**

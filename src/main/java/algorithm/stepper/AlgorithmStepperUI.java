@@ -14,8 +14,9 @@ import java.awt.event.ActionEvent;
  */
 public class AlgorithmStepperUI extends JFrame {
 
-    private final Algorithm algorithm;
+    protected final Algorithm algorithm;
     private final AlgorithmStepper algorithmStepper;
+    protected JPanel buttonPanel;
 
     /**
      * The constructor for the AlgorithmStepperUI
@@ -41,16 +42,33 @@ public class AlgorithmStepperUI extends JFrame {
         setLayout(new FlowLayout());
         setResizable(false);
 
+        buttonPanel = new JPanel();
+
         // Create a back button and add the stepBackward functionality to it
         JButton previousStepButton = new JButton("<-");
-        previousStepButton.addActionListener((ActionEvent e) -> algorithmStepper.stepBackward());
-        add(previousStepButton);
+        previousStepButton.addActionListener((ActionEvent e) -> stepBackward());
+        buttonPanel.add(previousStepButton);
 
         // Create a forward button and add the stepForward functionality to it
         JButton nextStepButton = new JButton("->");
-        nextStepButton.addActionListener((ActionEvent e) -> algorithmStepper.stepForward());
-        add(nextStepButton);
+        nextStepButton.addActionListener((ActionEvent e) -> stepForward());
+        buttonPanel.add(nextStepButton);
 
+        add(buttonPanel);
         pack();
+    }
+
+    /**
+     * Step the algorithm backward
+     */
+    protected void stepBackward() {
+        algorithmStepper.stepBackward();
+    }
+
+    /**
+     * Step the algorithm forward
+     */
+    protected void stepForward() {
+        algorithmStepper.stepForward();
     }
 }
