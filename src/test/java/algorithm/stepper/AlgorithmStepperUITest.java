@@ -1,12 +1,11 @@
-package algorithmUI;
+package algorithm.stepper;
 
-import algorithm.implementations.Fibonacci;
-import algorithm.stepper.AlgorithmStepperUI;
+import algorithm.implementations.fibonacci.Fibonacci;
 
 /**
  * This class contains a simple main method that will allow the testing of the AlgorithmStepperUI
  */
-public class SimpleAlgorithmUITest {
+public class AlgorithmStepperUITest {
 
     /**
      * Instantiates a new AlgorithmStepperUI with a fibonacci Algorithm implementation
